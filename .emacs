@@ -13,6 +13,9 @@
 (setq cperl-invalid-face (quote off))
 ; Make parens electric (auto-insert matching)
 (setq cperl-electric-parens t)
+; Make sure cperl mode indents more sanely
+(setq cperl-indent-parens-as-block t)
+
 ; Make sure matching parens are highlighted, without delay
 (show-paren-mode t)
 (setq show-paren-style 'expression)
