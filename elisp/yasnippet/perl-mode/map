@@ -1,0 +1,3 @@
+# name: map function
+# --
+map { $0 } @$1

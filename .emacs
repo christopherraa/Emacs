@@ -22,3 +22,8 @@
 (setq show-paren-delay 0)
 (set-face-background 'show-paren-match-face "#656565")
 ;(set-face-foreground 'show-paren-match-face "#FFFFFF")
+
+
+; Load custom yasnippets
+(setq yas/root-directory "~/.elisp/yasnippet")
+(yas/load-directory yas/root-directory)
