@@ -1,0 +1,3 @@
+[submodule "elisp/smarttabs"]
+	path = elisp/smarttabs
+	url = git://github.com/jcsalomon/smarttabs.git
