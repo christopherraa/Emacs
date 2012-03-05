@@ -50,10 +50,17 @@
  '(cperl-indent-parens-as-block t)
  '(cperl-label-offset 0)
  '(cperl-merge-trailing-else nil)
- '(cperl-min-label-indent 0))
+ '(cperl-min-label-indent 0)
+ '(js-indent-level 2))
 (custom-set-faces
   ;; custom-set-faces was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
  )
+
+(require 'css-mode)
+(setq cssm-indent-level 2)
+(setq cssm-newline-before-closing-bracket t)
+(setq cssm-indent-function #'cssm-c-style-indenter)
+(setq cssm-mirror-mode t)
