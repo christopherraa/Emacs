@@ -1,0 +1,11 @@
+# name: Perl module content, with common sense
+# key: pack
+# --
+package ${1:Package};
+
+use strict;
+use warnings;
+
+$0
+
+1;

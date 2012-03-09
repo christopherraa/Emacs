@@ -51,7 +51,10 @@
  '(cperl-label-offset 0)
  '(cperl-merge-trailing-else nil)
  '(cperl-min-label-indent 0)
- '(js-indent-level 2))
+ '(js-indent-level 2)
+ '(js2-basic-offset 2)
+ '(js2-bounce-indent-p t)
+ '(js2-mode-escape-quotes nil))
 (custom-set-faces
   ;; custom-set-faces was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
