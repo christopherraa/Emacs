@@ -13,12 +13,17 @@
 (setq cperl-invalid-face (quote off))
 ; Make parens electric (auto-insert matching)
 (setq cperl-electric-parens t)
+(global-set-key (kbd "C-x p") 'perldoc-module)
 
 ; Make sure matching parens are highlighted, without delay
 (show-paren-mode t)
-(setq show-paren-style 'expression)
+(setq show-paren-style 'parenthesis)
 (setq show-paren-delay 0)
-(set-face-background 'show-paren-match-face "#656565")
+;(set-face-background 'show-paren-match-face "#656565")
+
+; Show trailing whitespace
+(setq show-trailing-whitespace 1)
+(setq cperl-invalid-face 'trailing-whitespace)
 
 ; Load custom yasnippets
 (setq yas/root-directory "~/.elisp/yasnippet")
@@ -46,6 +51,7 @@
   ;; If there is more than one, they won't work right.
  '(cperl-break-one-line-blocks-when-indent nil)
  '(cperl-close-paren-offset 0)
+ '(cperl-continued-statement-offset 0)
  '(cperl-indent-comment-at-column-0 t)
  '(cperl-indent-parens-as-block t)
  '(cperl-label-offset 0)
@@ -67,3 +73,7 @@
 (setq cssm-newline-before-closing-bracket t)
 (setq cssm-indent-function #'cssm-c-style-indenter)
 (setq cssm-mirror-mode t)
+(put 'upcase-region 'disabled nil)
+
+(require 'color-theme-solarized)
+(put 'downcase-region 'disabled nil)
