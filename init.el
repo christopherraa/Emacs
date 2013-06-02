@@ -1,5 +1,5 @@
 ; Add .elisp directory to load-path
-(setq load-path (cons "~/.elisp" load-path))
+(add-to-list 'load-path "~/.emacs.d/elisp")
 
 ; Load my "perl-convenience" stuff
 (load "perl-convenience")
@@ -26,7 +26,7 @@
 (setq cperl-invalid-face 'trailing-whitespace)
 
 ; Load custom yasnippets
-(setq yas/root-directory "~/.elisp/yasnippet")
+(setq yas/root-directory "~/.emacs.d/elisp/yasnippet")
 (yas/load-directory yas/root-directory)
 
 
