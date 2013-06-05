@@ -1,5 +1,13 @@
-; Add .elisp directory to load-path
+(setq site-lisp-dir
+			(expand-file-name "site-lisp" user-emacs-directory))
+
+;; Set up load path
+(add-to-list 'load-path site-lisp-dir)
 (add-to-list 'load-path "~/.emacs.d/elisp")
+
+(dolist (project (directory-files site-lisp-dir t "\\w+"))
+  (when (file-directory-p project)
+    (add-to-list 'load-path project)))
 
 ; Load my "perl-convenience" stuff
 (load "perl-convenience")
@@ -90,3 +98,10 @@
 ))
 (setq mweb-filename-extensions '("php" "htm" "html" "ctp" "phtml" "php4" "php5" "ep"))
 (multi-web-global-mode 1)
+
+; Multiple cursors
+(require 'multiple-cursors)
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
