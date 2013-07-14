@@ -1,13 +1,13 @@
-(setq site-lisp-dir
-			(expand-file-name "site-lisp" user-emacs-directory))
+;(setq site-lisp-dir
+;			(expand-file-name "site-lisp" user-emacs-directory))
 
 ;; Set up load path
-(add-to-list 'load-path site-lisp-dir)
+;(add-to-list 'load-path site-lisp-dir)
 (add-to-list 'load-path "~/.emacs.d/elisp")
 
-(dolist (project (directory-files site-lisp-dir t "\\w+"))
-  (when (file-directory-p project)
-    (add-to-list 'load-path project)))
+;(dolist (project (directory-files site-lisp-dir t "\\w+"))
+;  (when (file-directory-p project)
+;    (add-to-list 'load-path project)))
 
 ; Load my "perl-convenience" stuff
 (load "perl-convenience")
@@ -88,20 +88,23 @@
 
 
 ; Trying out multi-web-mode
-(require 'multi-web-mode)
-(setq mweb-default-major-mode 'html-mode)
-(setq mweb-tags '((php-mode "<\\?php\\|<\\? \\|<\\?=" "\\?>")
-                  (js-mode "<script[^>]*>" "</script>")
-                  (css-mode "<style[^>]*>" "</style>")
-									(cperl-mode "<%=" "%>")
-									(cperl-mode "^\\(\t\\|\s\\)*%" "$")
-))
-(setq mweb-filename-extensions '("php" "htm" "html" "ctp" "phtml" "php4" "php5" "ep"))
-(multi-web-global-mode 1)
+;; (require 'multi-web-mode)
+;; (setq mweb-default-major-mode 'html-mode)
+;; (setq mweb-tags '((php-mode "<\\?php\\|<\\? \\|<\\?=" "\\?>")
+;;                   (js-mode "<script[^>]*>" "</script>")
+;;                   (css-mode "<style[^>]*>" "</style>")
+;; 									(cperl-mode "<%=" "%>")
+;; 									(cperl-mode "^\\(\t\\|\s\\)*%" "$")
+;; 									(sql-mode "<<SQL" "^SQL")
+;; ))
+;; (setq mweb-filename-extensions '("php" "htm" "html" "ctp" "phtml" "php4" "php5" "ep"))
+;; (multi-web-global-mode 1)
 
 ; Multiple cursors
-(require 'multiple-cursors)
-(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
-(global-set-key (kbd "C->") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+;; (require 'multiple-cursors)
+;; (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+;; (global-set-key (kbd "C->") 'mc/mark-next-like-this)
+;; (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+;; (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+
+(define-key isearch-mode-map (kbd "C-y") 'isearch-yank-kill)
