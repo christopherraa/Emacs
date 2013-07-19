@@ -1,3 +1,9 @@
 [submodule "elisp/smarttabs"]
 	path = elisp/smarttabs
 	url = git://github.com/jcsalomon/smarttabs.git
+[submodule "site-lisp/wrap-region"]
+	path = site-lisp/wrap-region
+	url = git@github.com:rejeep/wrap-region.git
+[submodule "site-lisp/dash"]
+	path = site-lisp/dash
+	url = git@github.com:magnars/dash.el.git

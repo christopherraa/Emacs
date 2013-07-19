@@ -1,13 +1,13 @@
-;(setq site-lisp-dir
-;			(expand-file-name "site-lisp" user-emacs-directory))
+(setq site-lisp-dir
+			(expand-file-name "site-lisp" user-emacs-directory))
 
 ;; Set up load path
-;(add-to-list 'load-path site-lisp-dir)
+(add-to-list 'load-path site-lisp-dir)
 (add-to-list 'load-path "~/.emacs.d/elisp")
 
-;(dolist (project (directory-files site-lisp-dir t "\\w+"))
-;  (when (file-directory-p project)
-;    (add-to-list 'load-path project)))
+(dolist (project (directory-files site-lisp-dir t "\\w+"))
+  (when (file-directory-p project)
+    (add-to-list 'load-path project)))
 
 ; Load my "perl-convenience" stuff
 (load "perl-convenience")
@@ -108,3 +108,9 @@
 ;; (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
 (define-key isearch-mode-map (kbd "C-y") 'isearch-yank-kill)
+
+; Load wrap-region and enable it globally
+(require 'wrap-region)
+(define-globalized-minor-mode global-wrap-region-mode
+  wrap-region-mode wrap-region-mode)
+(global-wrap-region-mode 1)
