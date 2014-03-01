@@ -12,6 +12,21 @@
 ; Load my "perl-convenience" stuff
 (load "perl-convenience")
 
+; Load auto-complete mode
+;(require 'auto-complete-config)
+;(add-to-list 'ac-dictionary-directories "~/.emacs.d/site-lisp/auto-complete/dict")
+;(ac-config-default)
+
+; Log4e options
+;(log4e:deflogger "hoge" "%t [%l] %m" "%H:%M:%S")
+
+; Load auto-complete for perl (w/ PLsense)
+;(require 'plsense)
+;; If you want to start server process automatically,
+;(setq plsense-server-start-automatically-p t)
+;(plsense-config-default)
+
+
 ; Now bind my F6-key to the run-prove command
 (global-set-key [f6] 'run-prove)
 
@@ -114,3 +129,14 @@
 (define-globalized-minor-mode global-wrap-region-mode
   wrap-region-mode wrap-region-mode)
 (global-wrap-region-mode 1)
+
+; Load less-css-mode
+(require 'less-mode)
+
+; Setting backup-options
+(setq backup-directory-alist `(("." . "~/.saves")))
+(setq backup-by-copying t)
+(setq delete-old-versions t
+	kept-new-versions 6
+	kept-old-versions 2
+	version-control t)
