@@ -1,0 +1,9 @@
+# name: Mojolicious Controller
+# key: mcont
+# --
+package ${1:Package};
+use Mojo::Base 'Mojolicious::Controller';
+
+$0
+
+1;
