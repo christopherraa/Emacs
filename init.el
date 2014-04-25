@@ -68,10 +68,6 @@
 ;(smart-tabs-advice c-indent-region c-basic-offset)
 ;(smart-tabs-advice js2-indent-line js2-basic-offset)
 (custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
  '(cperl-break-one-line-blocks-when-indent nil)
  '(cperl-close-paren-offset 0)
  '(cperl-continued-statement-offset 0)
@@ -83,23 +79,21 @@
  '(js-indent-level 2)
  '(js2-basic-offset 2)
  '(js2-bounce-indent-p t)
- '(js2-mode-escape-quotes nil))
-(custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
- )
+ '(js2-mode-escape-quotes nil)
+ '(ruby-indent-tabs-mode t)
+ '(sh-basic-offset 2))
+(custom-set-faces )
 
 (require 'css-mode)
 (setq cssm-indent-level 2)
 (setq cssm-newline-before-closing-bracket t)
 (setq cssm-indent-function #'cssm-c-style-indenter)
 (setq cssm-mirror-mode t)
+
 (put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
 
 (require 'color-theme-solarized)
-(put 'downcase-region 'disabled nil)
 
 
 ; Trying out multi-web-mode
@@ -140,3 +134,18 @@
 	kept-new-versions 6
 	kept-old-versions 2
 	version-control t)
+
+; Settings for Magit
+(defun disable-magit-highlight-in-buffer () 
+  (face-remap-add-relative 'magit-item-highlight '())
+	(set-face-background 'magit-diff-hunk-header "black")
+	(set-face-background 'magit-diff-file-header "black")
+)
+(add-hook 'magit-status-mode-hook 'disable-magit-highlight-in-buffer)
+(global-set-key (kbd "C-c g") 'magit-status)
+
+(load "mu4e-config")
+
+;; don't keep message buffers around
+(setq message-kill-buffer-on-exit t)
+(put 'dired-find-alternate-file 'disabled nil)
