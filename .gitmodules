@@ -1,5 +1,5 @@
-[submodule "elisp/smarttabs"]
-	path = elisp/smarttabs
+[submodule "site-lisp/smarttabs"]
+	path = site-lisp/smarttabs
 	url = git://github.com/jcsalomon/smarttabs.git
 [submodule "site-lisp/wrap-region"]
 	path = site-lisp/wrap-region
