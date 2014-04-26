@@ -1,5 +1,4 @@
 (require 'css-mode)
-(require 'color-theme-solarized)
 (require 'wrap-region)
 (require 'less-mode)
 (require 'smtpmail)
