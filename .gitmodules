@@ -28,3 +28,6 @@
 [submodule "site-lisp/yaxception"]
 	path = site-lisp/yaxception
 	url = git@github.com:aki2o/yaxception.git
+[submodule "site-lisp/less-mode"]
+	path = site-lisp/less-mode
+	url = git@github.com:purcell/less-css-mode.git
