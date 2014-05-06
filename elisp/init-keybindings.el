@@ -9,3 +9,5 @@
 ;; (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
 (global-set-key (kbd "C-c g") 'magit-status)
+(define-key isearch-mode-map (kbd "C-y") 'isearch-yank-kill)
+

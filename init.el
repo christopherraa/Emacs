@@ -1,42 +1,26 @@
-(setq site-lisp-dir
-			(expand-file-name "site-lisp" user-emacs-directory))
+(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+
+(setq
+	site-lisp-dir (expand-file-name "site-lisp" user-emacs-directory)
+	elisp-dir (expand-file-name "elisp" user-emacs-directory))
 
 ;; Set up load path
 (add-to-list 'load-path site-lisp-dir)
-(add-to-list 'load-path "~/.emacs.d/elisp")
+(add-to-list 'load-path elisp-dir)
 
 (dolist (project (directory-files site-lisp-dir t "\\w+"))
   (when (file-directory-p project)
     (add-to-list 'load-path project)))
 
-; Load my "perl-convenience" stuff
+(load "load-packages")
+(load "setup-mu4e")
+(load "init-keybindings")
+(load "setup-perl-mode")
+(load "setup-magit")
+(load "setup-markdown-mode")
 (load "perl-convenience")
-
-; Load auto-complete mode
-;(require 'auto-complete-config)
-;(add-to-list 'ac-dictionary-directories "~/.emacs.d/site-lisp/auto-complete/dict")
-;(ac-config-default)
-
-; Log4e options
-;(log4e:deflogger "hoge" "%t [%l] %m" "%H:%M:%S")
-
-; Load auto-complete for perl (w/ PLsense)
-;(require 'plsense)
-;; If you want to start server process automatically,
-;(setq plsense-server-start-automatically-p t)
-;(plsense-config-default)
-
-
-; Now bind my F6-key to the run-prove command
-(global-set-key [f6] 'run-prove)
-
-; Prefer to use cperl-mode over ancient perl-mode
-(defalias 'perl-mode 'cperl-mode)
-; Disable the annoying display of trailing whitespace as '_'
-(setq cperl-invalid-face (quote off))
-; Make parens electric (auto-insert matching)
-(setq cperl-electric-parens t)
-(global-set-key (kbd "C-x p") 'perldoc-module)
 
 ; Make sure matching parens are highlighted, without delay
 (show-paren-mode t)
@@ -46,10 +30,9 @@
 
 ; Show trailing whitespace
 (setq show-trailing-whitespace 1)
-(setq cperl-invalid-face 'trailing-whitespace)
 
 ; Load custom yasnippets
-(setq yas/root-directory "~/.emacs.d/elisp/yasnippet")
+(setq yas/root-directory (expand-file-name "elisp/yasnippet" user-emacs-directory))
 (yas/load-directory yas/root-directory)
 
 
@@ -58,8 +41,6 @@
 ; Use smart-tabs-mode
 ;(setq load-path (cons "~/.elisp/smarttabs" load-path))
 ;(setq cua-auto-tabify-rectangles nil)
-;(require 'smart-tabs-mode)
-;(require 'smarttabs)
 
 ;    for js2-mode
 ;(setq-default indent-tabs-mode nil)
@@ -68,23 +49,13 @@
 ;(smart-tabs-advice c-indent-region c-basic-offset)
 ;(smart-tabs-advice js2-indent-line js2-basic-offset)
 (custom-set-variables
- '(cperl-break-one-line-blocks-when-indent nil)
- '(cperl-close-paren-offset 0)
- '(cperl-continued-statement-offset 0)
- '(cperl-indent-comment-at-column-0 t)
- '(cperl-indent-parens-as-block t)
- '(cperl-label-offset 0)
- '(cperl-merge-trailing-else nil)
- '(cperl-min-label-indent 0)
  '(js-indent-level 2)
  '(js2-basic-offset 2)
  '(js2-bounce-indent-p t)
  '(js2-mode-escape-quotes nil)
  '(ruby-indent-tabs-mode t)
  '(sh-basic-offset 2))
-(custom-set-faces )
 
-(require 'css-mode)
 (setq cssm-indent-level 2)
 (setq cssm-newline-before-closing-bracket t)
 (setq cssm-indent-function #'cssm-c-style-indenter)
@@ -93,11 +64,7 @@
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
 
-(require 'color-theme-solarized)
-
-
 ; Trying out multi-web-mode
-;; (require 'multi-web-mode)
 ;; (setq mweb-default-major-mode 'html-mode)
 ;; (setq mweb-tags '((php-mode "<\\?php\\|<\\? \\|<\\?=" "\\?>")
 ;;                   (js-mode "<script[^>]*>" "</script>")
@@ -109,23 +76,11 @@
 ;; (setq mweb-filename-extensions '("php" "htm" "html" "ctp" "phtml" "php4" "php5" "ep"))
 ;; (multi-web-global-mode 1)
 
-; Multiple cursors
-;; (require 'multiple-cursors)
-;; (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
-;; (global-set-key (kbd "C->") 'mc/mark-next-like-this)
-;; (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-;; (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
-
-(define-key isearch-mode-map (kbd "C-y") 'isearch-yank-kill)
 
 ; Load wrap-region and enable it globally
-(require 'wrap-region)
 (define-globalized-minor-mode global-wrap-region-mode
   wrap-region-mode wrap-region-mode)
 (global-wrap-region-mode 1)
-
-; Load less-css-mode
-(require 'less-mode)
 
 ; Setting backup-options
 (setq backup-directory-alist `(("." . "~/.saves")))
@@ -134,17 +89,6 @@
 	kept-new-versions 6
 	kept-old-versions 2
 	version-control t)
-
-; Settings for Magit
-(defun disable-magit-highlight-in-buffer () 
-  (face-remap-add-relative 'magit-item-highlight '())
-	(set-face-background 'magit-diff-hunk-header "black")
-	(set-face-background 'magit-diff-file-header "black")
-)
-(add-hook 'magit-status-mode-hook 'disable-magit-highlight-in-buffer)
-(global-set-key (kbd "C-c g") 'magit-status)
-
-(load "mu4e-config")
 
 ;; don't keep message buffers around
 (setq message-kill-buffer-on-exit t)
