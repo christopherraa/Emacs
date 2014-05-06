@@ -4,6 +4,9 @@
 (require 'smtpmail)
 (require 'mu4e)
 
+(autoload 'markdown-mode "markdown-mode"
+   "Major mode for editing Markdown files" t)
+
 ;(require 'auto-complete-config)
 ;(require 'plsense)
 ;(require 'smarttabs)
