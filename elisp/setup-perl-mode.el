@@ -13,3 +13,5 @@
 	cperl-label-offset 0
 	cperl-merge-trailing-else nil
 	cperl-min-label-indent 0)
+
+(add-to-list 'auto-mode-alist '("\\.t\\'" . cperl-mode))
