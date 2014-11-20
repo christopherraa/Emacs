@@ -15,3 +15,12 @@
 	cperl-min-label-indent 0)
 
 (add-to-list 'auto-mode-alist '("\\.t\\'" . cperl-mode))
+
+(defun my-cperl-mode-hook ()
+  (interactive)
+  (set-face-background 'cperl-hash-face "unspecified")
+  (set-face-background 'cperl-array-face "unspecified")
+  (message "cperl hook"))
+
+(add-hook 'cperl-mode-hook 'my-cperl-mode-hook)
+
