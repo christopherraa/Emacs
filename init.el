@@ -22,6 +22,7 @@
 (load "setup-markdown-mode")
 (load "perl-convenience")
 (load "setup-company-mode")
+(load "setup-haskell-mode")
 
 
 ; Make sure matching parens are highlighted, without delay
@@ -61,6 +62,7 @@
  '(js2-mode-escape-quotes nil)
  '(puppet-indent-tabs-mode t)
  '(ruby-indent-tabs-mode t)
+ '(sgml-xml-mode t)
  '(sh-basic-offset 2))
 
 (setq cssm-indent-level 2)
@@ -124,3 +126,6 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+(global-set-key "\M-[1;5C"    'forward-word)  ; Ctrl+right   => forward word
+(global-set-key "\M-[1;5D"    'backward-word) ; Ctrl+left    => backward word
