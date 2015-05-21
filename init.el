@@ -15,18 +15,18 @@
     (add-to-list 'load-path project)))
 
 (load "load-packages")
-(load "setup-mu4e")
 (load "init-keybindings")
-(load "setup-perl-mode")
+(load "setup-mu4e")
 (load "setup-magit")
+(load "setup-perl-mode")
 (load "setup-markdown-mode")
-(load "perl-convenience")
 (load "setup-company-mode")
 (load "setup-haskell-mode")
 (load "setup-yasnippet-mode")
 (load "setup-dired-mode")
 (load "setup-css-mode")
 (load "setup-wrap-region-mode")
+(load "perl-convenience")
 
 
 ; Make sure matching parens are highlighted, without delay
