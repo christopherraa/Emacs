@@ -23,7 +23,7 @@
 (load "perl-convenience")
 (load "setup-company-mode")
 (load "setup-haskell-mode")
-(load "setup-yasnippet")
+(load "setup-yasnippet-mode")
 (load "setup-dired-mode")
 
 
