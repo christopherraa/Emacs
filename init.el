@@ -23,6 +23,7 @@
 (load "perl-convenience")
 (load "setup-company-mode")
 (load "setup-haskell-mode")
+(load "setup-yasnippet")
 
 
 ; Make sure matching parens are highlighted, without delay
@@ -34,9 +35,6 @@
 ; Show trailing whitespace
 (setq show-trailing-whitespace 1)
 
-; Load custom yasnippets
-(setq yas/root-directory (expand-file-name "snippets" user-emacs-directory))
-(yas/load-directory yas/root-directory)
 
 
 (setq-default tab-width 2)
