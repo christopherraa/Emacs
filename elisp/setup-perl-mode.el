@@ -24,3 +24,6 @@
 
 (add-hook 'cperl-mode-hook 'my-cperl-mode-hook)
 
+; Now bind my F6-key to the run-prove command
+(global-set-key [f6] 'run-prove)
+(global-set-key (kbd "C-x p") 'perldoc-module)

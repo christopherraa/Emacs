@@ -5,3 +5,5 @@
 	(set-face-background 'magit-diff-file-header "black")
 )
 (add-hook 'magit-status-mode-hook 'disable-magit-highlight-in-buffer)
+
+(global-set-key (kbd "C-c g") 'magit-status)
