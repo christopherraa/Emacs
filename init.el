@@ -25,6 +25,7 @@
 (load "setup-haskell-mode")
 (load "setup-yasnippet-mode")
 (load "setup-dired-mode")
+(load "setup-css-mode")
 
 
 ; Make sure matching parens are highlighted, without delay
@@ -63,11 +64,6 @@
  '(ruby-indent-tabs-mode t)
  '(sgml-xml-mode t)
  '(sh-basic-offset 2))
-
-(setq cssm-indent-level 2)
-(setq cssm-newline-before-closing-bracket t)
-(setq cssm-indent-function #'cssm-c-style-indenter)
-(setq cssm-mirror-mode t)
 
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
