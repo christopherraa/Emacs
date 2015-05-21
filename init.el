@@ -35,7 +35,7 @@
 (setq show-trailing-whitespace 1)
 
 ; Load custom yasnippets
-(setq yas/root-directory (expand-file-name "elisp/yasnippet" user-emacs-directory))
+(setq yas/root-directory (expand-file-name "snippets" user-emacs-directory))
 (yas/load-directory yas/root-directory)
 
 
