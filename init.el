@@ -26,6 +26,7 @@
 (load "setup-yasnippet-mode")
 (load "setup-dired-mode")
 (load "setup-css-mode")
+(load "setup-wrap-region-mode")
 
 
 ; Make sure matching parens are highlighted, without delay
@@ -68,11 +69,6 @@
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
 
-
-; Load wrap-region and enable it globally
-(define-globalized-minor-mode global-wrap-region-mode
-  wrap-region-mode wrap-region-mode)
-(global-wrap-region-mode 1)
 
 ; Setting backup-options
 (setq backup-directory-alist `(("." . "~/.saves")))
