@@ -71,18 +71,6 @@
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
 
-; Trying out multi-web-mode
-;; (setq mweb-default-major-mode 'html-mode)
-;; (setq mweb-tags '((php-mode "<\\?php\\|<\\? \\|<\\?=" "\\?>")
-;;                   (js-mode "<script[^>]*>" "</script>")
-;;                   (css-mode "<style[^>]*>" "</style>")
-;; 									(cperl-mode "<%=" "%>")
-;; 									(cperl-mode "^\\(\t\\|\s\\)*%" "$")
-;; 									(sql-mode "<<SQL" "^SQL")
-;; ))
-;; (setq mweb-filename-extensions '("php" "htm" "html" "ctp" "phtml" "php4" "php5" "ep"))
-;; (multi-web-global-mode 1)
-
 
 ; Load wrap-region and enable it globally
 (define-globalized-minor-mode global-wrap-region-mode
