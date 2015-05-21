@@ -1,5 +1,3 @@
-(require 'css-mode)
-(require 'wrap-region)
 (require 'less-css-mode)
 (require 'smtpmail)
 (require 'mu4e)
