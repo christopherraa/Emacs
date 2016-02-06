@@ -3,8 +3,8 @@
 ;; Set up load path
 (add-to-list 'load-path elisp-dir)
 
-(load "setup-packages")
 (load "general-settings")
+(load "setup-packages")
 (load "load-packages")
 (load "init-keybindings")
 (load "setup-mu4e")
