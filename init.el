@@ -9,6 +9,7 @@
 (load "init-keybindings")
 (load "setup-mu4e")
 (load "setup-magit")
+(load "setup-git-gutter+-mode")
 (load "setup-perl-mode")
 (load "setup-markdown-mode")
 ;; (load "setup-company-mode")
