@@ -24,6 +24,13 @@
 ;; don't keep message buffers around
 (setq message-kill-buffer-on-exit t)
 
+;; These overrides are here because I use emacs through tmux, with $TERM
+;; set to screen-256color, and without these mappings the input would not
+;; map to the correct windmove-function.
+(define-key input-decode-map "\e[1;2A" [S-up])
+(define-key input-decode-map "\e[1;2B" [S-down])
+(define-key input-decode-map "\e[1;2C" [S-right])
+(define-key input-decode-map "\e[1;2D" [S-left])
 ;; use Shift+arrow_keys to move cursor around split panes
 (windmove-default-keybindings)
 
