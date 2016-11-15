@@ -14,20 +14,25 @@
 (load "setup-markdown-mode")
 ;; (load "setup-company-mode")
 (load "setup-haskell-mode")
-(load "setup-yasnippet-mode")
 (load "setup-dired-mode")
 (load "setup-css-mode")
 (load "setup-wrap-region-mode")
 (load "setup-show-paren-mode")
 (load "setup-js2-mode")
+(load "setup-yaml-mode")
+(load "setup-shell-mode")
+(load "setup-whitespace-mode")
 (load "perl-convenience")
+(load "setup-themes")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+	 (quote
+		("0542fbd0a5a636ff3000d77c5ddf5da6c375976c921efb83960f425e4b399a99" default)))
  '(puppet-indent-tabs-mode t)
  '(ruby-indent-tabs-mode t)
- '(sgml-xml-mode t)
- '(sh-basic-offset 2))
+ '(sgml-xml-mode t))
