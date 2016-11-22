@@ -7,6 +7,7 @@
 (load "setup-packages")
 (load "load-packages")
 (load "init-keybindings")
+(load "setup-ido-mode")
 (load "setup-mu4e")
 (load "setup-magit")
 (load "setup-git-gutter+-mode")
