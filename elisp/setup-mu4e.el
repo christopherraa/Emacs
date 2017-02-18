@@ -9,6 +9,8 @@
 	mu4e-drafts-folder "/INBOX.Drafts"
 	mu4e-sent-folder   "/INBOX.Sent"
 	mu4e-trash-folder  "/INBOX.Trash"
+	mu4e-split-view 'vertical
+	mu4e-headers-visible-columns 110
 
 	mu4e-maildir-shortcuts
 	'( ("/INBOX"       . ?i)
