@@ -23,8 +23,11 @@
 (load "setup-yaml-mode")
 (load "setup-shell-mode")
 (load "setup-whitespace-mode")
+(load "find-file-as-root")
 (load "perl-convenience")
 (load "setup-themes")
+(load "setup-multiple-cursors")
+(load "setup-flycheck")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
