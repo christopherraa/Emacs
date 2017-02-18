@@ -21,6 +21,11 @@
 		magit
 		git-gutter+
 		ido-vertical-mode
+		flycheck
+		js2-mode
+		js2-highlight-vars
+		restclient
+		salt-mode
 		) "a list of packages to ensure are installed at launch.")
 
 ; method to check if all packages are installed
