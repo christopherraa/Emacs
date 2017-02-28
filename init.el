@@ -8,7 +8,7 @@
 (load "load-packages")
 (load "init-keybindings")
 (load "setup-ido-mode")
-(load "setup-mu4e")
+(when (package-installed-p 'mu4e) do (load "setup-mu4e"))
 (load "setup-magit")
 (load "setup-git-gutter+-mode")
 (load "setup-perl-mode")
