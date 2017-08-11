@@ -3,4 +3,4 @@
 
 ;; Actual themeing
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
-(load-theme 'wombat t)
+(load-theme 'monokai t)
