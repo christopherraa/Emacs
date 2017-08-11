@@ -37,7 +37,7 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
 	 (quote
-		("0542fbd0a5a636ff3000d77c5ddf5da6c375976c921efb83960f425e4b399a99" default)))
+		("e9df267a1c808451735f2958730a30892d9a2ad6879fb2ae0b939a29ebf31b63" "0542fbd0a5a636ff3000d77c5ddf5da6c375976c921efb83960f425e4b399a99" default)))
  '(puppet-indent-tabs-mode t)
  '(ruby-indent-tabs-mode t)
  '(sgml-xml-mode t))
