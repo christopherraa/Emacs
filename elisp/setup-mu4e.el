@@ -1,4 +1,3 @@
-(require 'mu4e)
 (defun file-string (file)
 	"Read the contents of a file and return as a string."
 	(with-current-buffer (find-file-noselect file)
@@ -40,4 +39,5 @@
 	smtpmail-smtp-server "secure.emailsrvr.com"
 	smtpmail-smtp-service 465)
 
+(require 'mu4e)
 (mu4e-headers-toggle-threading t)
