@@ -27,6 +27,9 @@
 		restclient
 		salt-mode
 		multiple-cursors
+		puppet-mode
+		emmet-mode
+		php-mode
 		) "a list of packages to ensure are installed at launch.")
 
 ; method to check if all packages are installed
