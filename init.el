@@ -28,6 +28,7 @@
 (load "setup-themes")
 (load "setup-multiple-cursors")
 (load "setup-flycheck")
+(load "setup-emmet")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
