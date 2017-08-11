@@ -11,3 +11,4 @@
 (set-face-attribute 'ido-vertical-match-face nil
 										:foreground nil)
 (ido-vertical-mode 1)
+(setq ido-save-directory-list-file (expand-file-name "tmp" "~"))
