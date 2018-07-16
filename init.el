@@ -29,6 +29,7 @@
 (load "setup-multiple-cursors")
 (load "setup-flycheck")
 (load "setup-emmet")
+(load "setup-restclient")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
