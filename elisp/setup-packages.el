@@ -24,12 +24,21 @@
 		flycheck
 		js2-mode
 		js2-highlight-vars
+		js2-refactor
 		restclient
 		salt-mode
 		multiple-cursors
 		puppet-mode
 		emmet-mode
 		php-mode
+		dockerfile-mode
+		groovy-mode
+		cpanfile-mode
+		go-mode
+		auto-complete
+		go-autocomplete
+		nord-theme
+		graphviz-dot-mode
 		) "a list of packages to ensure are installed at launch.")
 
 ; method to check if all packages are installed
