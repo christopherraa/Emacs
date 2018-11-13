@@ -1,4 +1,7 @@
 ;; Add some path variables for custom configuration
+
+(package-initialize)
+
 (setq elisp-dir (expand-file-name "elisp" user-emacs-directory))
 ;; Set up load path
 (add-to-list 'load-path elisp-dir)
