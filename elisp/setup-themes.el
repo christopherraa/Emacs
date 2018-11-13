@@ -3,4 +3,6 @@
 
 ;; Actual themeing
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
-(load-theme 'monokai t)
+
+(setq nord-comment-brightness 20)
+(load-theme 'nord t)
