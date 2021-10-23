@@ -4,5 +4,5 @@
 ;; Actual themeing
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 
-(setq nord-comment-brightness 20)
-(load-theme 'nord t)
+;(setq nord-comment-brightness 10)
+(load-theme 'atom-dark t)
