@@ -3,6 +3,8 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+				exit-recursive-edit
+				kill-region
 				))
 
 (setq mc/cmds-to-run-once
