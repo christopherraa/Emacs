@@ -11,4 +11,10 @@
 (set-face-attribute 'ido-vertical-match-face nil
 										:foreground nil)
 (ido-vertical-mode 1)
-(setq ido-save-directory-list-file (expand-file-name "tmp" "~"))
+
+
+(setq emacs-persistence-directory (concat user-emacs-directory "persistence/"))
+(unless (file-exists-p emacs-persistence-directory)
+    (make-directory emacs-persistence-directory t))
+(setq ido-save-directory-list-file
+    (concat emacs-persistence-directory "ido-last"))
