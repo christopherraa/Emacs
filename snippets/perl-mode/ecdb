@@ -1,4 +1,0 @@
-# name: scalar with EC::DB::Postgres instance
-# key: ecdb
-# --
-my \$$1 = EC::DB::Postgres->uri('pg://${2:username}:${3:password}@${4:host}/${1:dbname}?exceptions=1&encoding=1&use_prepare_cached=1');

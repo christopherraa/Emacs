@@ -1,4 +1,0 @@
-# name: map function
-# key: map
-# --
-map { $0 } @${1:array}

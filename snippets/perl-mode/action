@@ -1,8 +1,0 @@
-# name: Mojolicious Controller Action
-# key: action
-# --
-sub ${1:action} {
-	my $self = shift;
-	$0
-	return $self->render(...);
-}
