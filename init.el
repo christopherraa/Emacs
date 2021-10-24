@@ -42,4 +42,19 @@
   :bind ("C-c g" . magit-status)
   )
 
+;; Company for auto-complete in certain modes
+(use-package company
+  :ensure t
+  :config
+  (progn
+    (add-hook 'after-init-hook 'global-company-mode)))
+
+;; YAML-mode is pretty nice to have
+(use-package yaml-mode
+  :ensure t
+  :config
+  (progn
+    (add-to-list 'auto-mode-alist '("\\.yml\\'" . yaml-mode))
+    ))
+
 ;;; init.el ends here
